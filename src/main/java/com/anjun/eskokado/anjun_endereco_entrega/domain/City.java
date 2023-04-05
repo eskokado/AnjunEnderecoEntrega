@@ -16,6 +16,6 @@ public class City {
     @Column(unique = true, nullable = false, length = 100)
     private String name;
 
-    @ManyToOne()
+    @ManyToOne(optional = false)
     private State state;
 }
