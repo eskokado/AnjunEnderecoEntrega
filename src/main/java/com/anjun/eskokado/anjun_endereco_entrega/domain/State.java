@@ -16,6 +16,9 @@ public class State {
     @Column(unique = true, nullable = false, length = 100)
     private String name;
 
+    @Column(unique = true, nullable = false, length = 2)
+    private String code;
+
     @OneToMany(mappedBy = "state",fetch = FetchType.LAZY)
     private List<City> cities = new ArrayList<>();
 }
