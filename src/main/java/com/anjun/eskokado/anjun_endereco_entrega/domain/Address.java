@@ -3,9 +3,6 @@ package com.anjun.eskokado.anjun_endereco_entrega.domain;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Data
 public class Address {
@@ -13,7 +10,7 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String street;
 
     @Column(length = 30, nullable = false)
@@ -25,9 +22,9 @@ public class Address {
     @Column(length = 50, nullable = false)
     private String neighborhood;
 
-    @Column(name = "zip_code", length = 8)
+    @Column(name = "zip_code", length = 8, nullable = false)
     private String zipCode;
 
-    @ManyToOne()
+    @ManyToOne(optional = false)
     private City city;
 }
