@@ -14,17 +14,20 @@ public class OrderItem {
     private OrderItemPk id = new OrderItemPk();
 
     @Column(nullable = false, precision = 12, scale = 2)
-    private BigDecimal dicount;
+    private BigDecimal discount;
     @Column(nullable = false)
     private Integer quantity;
     @Column(nullable = false, precision = 12, scale = 2)
     private BigDecimal price;
 
-    public OrderItem(Order order, Product product, BigDecimal dicount, Integer quantity, BigDecimal price) {
+    public OrderItem() {
+
+    }
+    public OrderItem(Order order, Product product, BigDecimal discount, Integer quantity, BigDecimal price) {
         super();
         id.setOrder(order);
         id.setProduct(product);
-        this.dicount = dicount;
+        this.discount = discount;
         this.quantity = quantity;
         this.price = price;
     }

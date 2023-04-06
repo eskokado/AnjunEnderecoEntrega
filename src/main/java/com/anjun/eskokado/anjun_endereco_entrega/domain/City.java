@@ -18,4 +18,9 @@ public class City {
 
     @ManyToOne(optional = false)
     private State state;
+
+    public City(String name, State state) {
+        this.name = name;
+        this.state = state;
+    }
 }

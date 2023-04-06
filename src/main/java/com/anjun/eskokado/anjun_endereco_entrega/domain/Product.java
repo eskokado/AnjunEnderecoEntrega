@@ -25,6 +25,11 @@ public class Product {
     @OneToMany(mappedBy = "id.product")
     private Set<OrderItem> items = new HashSet<>();
 
+    public Product(String name, BigDecimal price) {
+        this.name = name;
+        this.price = price;
+    }
+
     public List<Order> getOrders() {
         List<Order> list = new ArrayList<>();
         items.stream().map(x -> list.add(x.getOrder()));
