@@ -16,11 +16,19 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "order_date", nullable = false, insertable = false)
+    @Column(name = "order_date")
     private LocalDate orderDate;
 
     @OneToMany(mappedBy = "id.order")
     private Set<OrderItem> items = new HashSet<>();
+
+    @ManyToOne
+    private Client client;
+
+    public Order(LocalDate orderDate, Client client) {
+        this.orderDate = orderDate;
+        this.client = client;
+    }
 
     public List<Product> getProducts() {
         List<Product> list = new ArrayList<>();

@@ -21,4 +21,9 @@ public class State {
 
     @OneToMany(mappedBy = "state",fetch = FetchType.LAZY)
     private List<City> cities = new ArrayList<>();
+
+    public State(String name, String code) {
+        this.name = name;
+        this.code = code;
+    }
 }

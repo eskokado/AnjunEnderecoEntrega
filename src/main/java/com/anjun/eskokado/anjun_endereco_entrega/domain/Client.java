@@ -18,4 +18,10 @@ public class Client {
 
     @ManyToOne(optional = false)
     private Address address;
+
+    public Client(String name, String email, Address address) {
+        this.name = name;
+        this.email = email;
+        this.address = address;
+    }
 }

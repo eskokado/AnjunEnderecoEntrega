@@ -27,4 +27,13 @@ public class Address {
 
     @ManyToOne(optional = false)
     private City city;
+
+    public Address(String street, String number, String complement, String neighborhood, String zipCode, City city) {
+        this.street = street;
+        this.number = number;
+        this.complement = complement;
+        this.neighborhood = neighborhood;
+        this.zipCode = zipCode;
+        this.city = city;
+    }
 }
